@@ -241,9 +241,12 @@ const getCurrentUser = asyncHandler(async(req,res) =>{
  return res
   .status(200)
   .json(
-    200,
+    new ApiResponse(
+      200,
     req.user,
     "current user fetcehd successdully"
+    )
+    
   )
 })
 
@@ -324,12 +327,6 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
     .status(200)
     .json(new ApiResponse(200, user, "Cover Image updated Sucessfully"));
 });
-
-
-
-
-
-
 
 export {
   registerUser,
